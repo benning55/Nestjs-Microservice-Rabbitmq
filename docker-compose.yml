@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  rabbit:
+    image: "rabbitmq:3-management"
+    container_name: benning-rabbit
+    hostname: hello
+    volumes:
+      - /var/lib/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: "rabbitmq"
+      RABBITMQ_DEFAULT_PASS: "rabbitmq"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
